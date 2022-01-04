@@ -21,6 +21,8 @@ fetch("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=libra&day=today", {
 
 // mM3hOIKpYsVAmBopD3qVFA==mPctNJmaPTOScjRr
 
+// test
+
 var name = 'Michael Jordan'
 $.ajax({
     method: 'GET',
