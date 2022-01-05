@@ -1,0 +1,21 @@
+#userDetails {
+    background-color: blueviolet;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+#celebDetails {
+    background-color: brown;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.box {
+    background-color: blueviolet;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.main-box {
+
+}
