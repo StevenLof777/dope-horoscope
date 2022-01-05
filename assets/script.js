@@ -43,6 +43,7 @@ $.ajax({
     }
 });
 
+
 // function testingFunc() {
 // 	var zodiac = '02-17' 
 // 	if (celebBDay.slice(5) != zodiac) {
@@ -52,3 +53,6 @@ $.ajax({
 // 	}
 // }
 // testingFunc()
+
+
+
