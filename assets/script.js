@@ -1,6 +1,6 @@
 var inputEl = document.querySelector('#month1')
 var input = inputEl.value
-
+console.log(input)
 // User Details
 var userDetailsUL = document.querySelector('#userDetails')
 var userColorLI = document.querySelector('#color')
@@ -9,8 +9,6 @@ var luckyNumLI = document.querySelector('#luck_number')
 var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
 
-
-// var month = localStorage.getItem
 function zodiac(day, month){
     // returns the zodiac sign according to day and month ( https://coursesweb.net/ )
     var zodiac =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
@@ -19,11 +17,9 @@ function zodiac(day, month){
    }
    
    var z_sign = zodiac(01, 09); // 15 - October
-   
-//    userDetails.write(z_sign); // Libra
-//    userDetails.innerText = z_sign
+   console.log(z_sign)
 
-   fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=libra&${input}`, {
+   fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${z_sign}&${input}`, {
 	"method": "POST",
 	"headers": {
 		"x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
@@ -36,13 +32,14 @@ function zodiac(day, month){
     var horoscopeData = response.json()
     .then(function (horoscopeData){
         console.log(horoscopeData)
-        console.log(horoscopeData)
-        console.log("color: " + horoscopeData.color)
-        console.log("compatibility: is " + horoscopeData.compatibility)
-        console.log("Description: " + horoscopeData.description)
-        console.log("Lucky Number: " + horoscopeData.lucky_number)
-        console.log("Lucky Time: " + horoscopeData.lucky_time)
-        console.log("Mood: " + horoscopeData.mood)
+        // console.log(horoscopeData)
+        // console.log("color: " + horoscopeData.color)
+        // console.log("compatibility: is " + horoscopeData.compatibility)
+        // console.log("Description: " + horoscopeData.description)
+        // console.log("Lucky Number: " + horoscopeData.lucky_number)
+        // console.log("Lucky Time: " + horoscopeData.lucky_time)
+        // console.log("Mood: " + horoscopeData.mood)
+        // userColorLI.innerText ='Color: ' + horoscopeData.color
     })
     // console.log(something)
 })
