@@ -5,7 +5,8 @@ var input = inputEl.value
 var userDetailsUL = document.querySelector('#userDetails')
 var userColorLI = document.querySelector('#color')
 var userCompLI = document.querySelector('#compatibility')
-var luckyNumLI = document.querySelector('#luck_number')
+var userDescLI = document.querySelector('#description')
+var luckyNumLI = document.querySelector('#lucky_number')
 var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
 
@@ -43,6 +44,13 @@ function zodiac(day, month){
         console.log("Lucky Number: " + horoscopeData.lucky_number)
         console.log("Lucky Time: " + horoscopeData.lucky_time)
         console.log("Mood: " + horoscopeData.mood)
+        userColorLI.innerHTML="Color:  " + horoscopeData.color
+        userCompLI.innerHTML="Compatibility:  " + horoscopeData.compatibility
+        userDescLI.innerHTML="Description:  " + horoscopeData.description
+        luckyNumLI.innerHTML="Lucky Number:  " + horoscopeData.lucky_number
+        luckyTimeLI.innerHTML="Lucky Time:  " + horoscopeData.lucky_time
+        moodLi.innerHTML="Mood:  " + horoscopeData.mood
+
     })
     // console.log(something)
 })
