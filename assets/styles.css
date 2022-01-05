@@ -31,9 +31,12 @@
 }
 
 .main-box {
+    background-color: blue;
 }
 
 .nav-link {
+    color: red;
     float: right;
     
 }
+
