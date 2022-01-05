@@ -10,7 +10,7 @@ function zodiac(day, month){
    
    var z_sign = zodiac(01, 09); // 15 - October
    
-   document.write(z_sign); // Libra
+//    document.write(z_sign); // Libra
 
 fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=libra&${input}`, {
 	"method": "POST",
