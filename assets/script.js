@@ -16,6 +16,18 @@ var zodiacArr =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemin
 var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
 
 
+var Aries =["Emma Watson", "Paul Rudd"]
+var Taurus =["Kelly Clarkson", "George Klooney"]
+var Gemini =["Venus Williams", "Johnny Depp"]
+var Cancer =["Selena Gomez", "Chris Pratt"]
+var Leo =["Chris Hemsworth", "Jennifer Lawrence"]
+var Virgo =["Beyonce", "Prince Harry"]
+var Libra =["Kim Kardashian", "Lil Wayne"]
+var Scorpio =["Leonardo DiCaprio", "Katy Perry"]
+var Sagittarius =["Britney Spears", "Brad Pitt"]
+var Capricorn =["Lin-Manuel Miranda", "Kate Middleton"]
+var Aquarius =["Shakira", "Harry Styles"]
+var Pisces =["Justin Bieber", "Olivia Rodrigo"]
 
 function zodiac(day, month){
     // returns the zodiac sign according to day and month (https://coursesweb.net/javascript/zodiac-signs_cs)
