@@ -16,6 +16,7 @@
     max-height: 400px;
 }
 
-/* .main-box {
-
-} */
+.col-dropdowns {
+    justify-content: center;
+    margin-left: 30%;
+}
