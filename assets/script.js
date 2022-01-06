@@ -86,10 +86,8 @@ $.ajax({
     }
 });
 
-var zodiacMonth = document.querySelector("[data-month='1']");
-
-zodiacMonth.addEventListener("click", function() {
-console.log("button works");
-})
+$( function() {
+    $( "#datepicker" ).datepicker();
+  } );
 
 
