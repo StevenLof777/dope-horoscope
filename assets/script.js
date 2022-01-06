@@ -12,7 +12,6 @@ var luckyNumLI = document.querySelector('#lucky_number')
 var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
 
-<<<<<<< HEAD
 // Celeb Details  
 var celebSign = document.querySelector('#month1')
 var celebColor = document.querySelector('#month1')
@@ -21,12 +20,6 @@ var celebLucky_number = document.querySelector('#month1')
 var celebLucky_time = document.querySelector('#month1')
 var celebMood = document.querySelector('#month1')
 var celebDescription = document.querySelector('#month1')
-=======
-// Date Picker
-$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
->>>>>>> 5c990b51ab258158c2fe569155c8f7bdfd5ab65a
 
 // Zodiac func var's
 var zodiacArr =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
@@ -105,7 +98,6 @@ function callCeleb () {
 }
 callCeleb()
 
-<<<<<<< HEAD
 $.ajax({
     url: "https://fiddle.jshell.net/favicon.png",
     beforeSend: function( xhr ) {
@@ -122,7 +114,4 @@ $.ajax({
 $( function() {
     $( "#datepicker" ).datepicker();
   } );
-=======
-
->>>>>>> 5c990b51ab258158c2fe569155c8f7bdfd5ab65a
 
