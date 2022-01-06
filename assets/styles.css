@@ -1,3 +1,17 @@
+:root {
+    --black: #0A1931;
+    --purple1: #3D2C8D;
+    --purple2: #916BBF;
+    --purple3: #C996CC;
+    --blue: #344CB7;
+    --blue2: #5C7AEA;
+    --gray: #E6E6E6;
+    --pink: #F0D9FF;
+  
+    font-family: 'Playfair Display', serif;
+ }
+ 
+ 
 #userDetails {
     background-color: blueviolet;
     max-width: 400px;
@@ -16,6 +30,7 @@
     max-height: 400px;
 }
 
+
 .col {
     justify-content: center;
     align-items: center;
@@ -23,4 +38,15 @@
 }
 /* .main-box {
 
-} */
+
+.navbar {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--purple2);
+
+}
+
+.nav-link {
+    position: relative;
+    right: 0px;
+    
+}
