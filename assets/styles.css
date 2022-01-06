@@ -31,18 +31,18 @@
 }
 
 
-.col {
+ .col {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-}
+} 
 
 /* .main-box { */
 
 
 .navbar {
     font-family: 'Playfair Display', serif;
-    background-color: var(--purple3);
+    background-color: var(--purple2);
 
 }
 
