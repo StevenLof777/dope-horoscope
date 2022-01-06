@@ -36,12 +36,13 @@
     align-items: center;
     flex-wrap: wrap;
 }
-/* .main-box {
+
+/* .main-box { */
 
 
 .navbar {
     font-family: 'Playfair Display', serif;
-    background-color: var(--purple2);
+    background-color: var(--purple3);
 
 }
 
