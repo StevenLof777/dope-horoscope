@@ -9,7 +9,24 @@ var userDescLI = document.querySelector('#description')
 var luckyNumLI = document.querySelector('#lucky_number')
 var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
+<<<<<<< HEAD
 
+=======
+var Aries =["Emma Watson", "Paul Rudd"]
+var Taurus =["Kelly Clarkson", "George Klooney"]
+var Gemini =["Venus Williams", "Johnny Depp"]
+var Cancer =["Selena Gomez", "Chris Pratt"]
+var Leo =["Chris Hemsworth", "Jennifer Lawrence"]
+var Virgo =["Beyonce", "Prince Harry"]
+var Libra =["Kim Kardashian", "Lil Wayne"]
+var Scorpio =["Leonardo DiCaprio", "Katy Perry"]
+var Sagittarius =["Britney Spears", "Brad Pitt"]
+var Capricorn =["Lin-Manuel Miranda", "Kate Middleton"]
+var Aquarius =["Shakira", "Harry Styles"]
+var Pisces =["Justin Bieber", "Olivia Rodrigo"]
+
+// var month = localStorage.getItem
+>>>>>>> 7d83123c0c273b0dd74128b587690cd7f1dc97b2
 function zodiac(day, month){
     // returns the zodiac sign according to day and month ( https://coursesweb.net/ )
     var zodiac =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
