@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/styles.css">
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/styles.css">
@@ -15,6 +14,7 @@
     <title>Dope Horoscope</title>
 </head>
 <body>
+
   <!-- Add social media icons -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Symbol</a>
@@ -42,7 +42,7 @@
   
   <div class="container main-box">
     <div class="row">
-        <div class="col col-dropdowns">
+        <div class="col">
         <!-- Add birth month drop down menu -->
           <div class="btn-group">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -62,10 +62,10 @@
               <li><a data-month="11" class="dropdown-item" href="#">November</a></li>
               <li><a data-month="12" class="dropdown-item" href="#">December</a></li>
             </ul>
-   
+          </div>
         </div>  
           <!-- Add birth date drop down menu -->
-
+          <div class="col"> 
             <div class="btn-group">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Select Birth Date
@@ -104,13 +104,8 @@
                 <li><a data-date="31" class="dropdown-item" href="#">31</a></li>
               </ul>
             </div>
-<<<<<<< HEAD
- 
-      </div>
-=======
          </div> 
-      <!-- </div> -->
->>>>>>> 842007fabae728fd5a6eaea98c96870245511eac
+      </div>
     </div>    
   </div>
   
@@ -118,29 +113,15 @@
   <div class="container">
     <div class="row">
       <!-- Left side -->
-     <div class="col">
-      <div class="container">
-        <ul id="userDetails">
-          <li id="color">"color: " + horoscopeData.color</li>
-          <li id="compatibility"></li>
-          <li id="description"></li>
-          <li id="lucky_number"></li>
-          <li id="lucky_time"></li>
-          <li id="mood"></li>
-        </ul>
-      </div>
-    </div>
-     
       <div class="col">
         <div class="container">
           <ul id="userDetails">
-            <li id="sign"></li>
-            <li id="color"></li>
+            <li id="color">word</li>
             <li id="compatibility"></li>
+            <li id="description"></li>
             <li id="lucky_number"></li>
             <li id="lucky_time"></li>
             <li id="mood"></li>
-            <li id="description"></li>
           </ul>
         </div>
       </div>
