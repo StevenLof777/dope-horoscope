@@ -12,6 +12,15 @@ var luckyNumLI = document.querySelector('#lucky_number')
 var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
 
+// Celeb Details  
+var celebSign = document.querySelector('#month1')
+var celebColor = document.querySelector('#month1')
+var celebCompatibility = document.querySelector('#month1')
+var celebLucky_number = document.querySelector('#month1')
+var celebLucky_time = document.querySelector('#month1')
+var celebMood = document.querySelector('#month1')
+var celebDescription = document.querySelector('#month1')
+
 // Zodiac func var's
 var zodiacArr =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
 var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
@@ -34,10 +43,9 @@ var Pisces =["Justin Bieber", "Olivia Rodrigo"]
 function zodiac(day, month){
     // returns the zodiac sign according to day and month (https://coursesweb.net/javascript/zodiac-signs_cs)
     return (day > last_day[month]) ? zodiacArr[month*1 + 1] : zodiacArr[month];
-    
 }
 
-var z_sign = 'virgo';
+var z_sign = 'virgo'
 
 function callUser () {
     fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${z_sign}&day=today`, {
@@ -77,19 +85,30 @@ function callCeleb () {
             var celebBDayArr = celebBDay.slice(5).split('-')
             var celebMonth = parseInt(celebBDayArr[0])
             var celebDay = parseInt(celebBDayArr[1])
-            console.log(celebMonth)
-            console.log(celebDay)
+            // zodiac(celebDay, celebMonth)
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
-        
-    })
-    // .done
-    // console.log(celebMonth)
-    // console.log(celebDay)
+    }).done(function( data ) {
+    if ( console && console.log ) {
+        console.log(celebBDay);
+    }
+});
 }
 callCeleb()
+
+$.ajax({
+    url: "https://fiddle.jshell.net/favicon.png",
+    beforeSend: function( xhr ) {
+      xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+    }
+  })
+    .done(function( data ) {
+      if ( console && console.log ) {
+        console.log( "Sample of data:", data.slice( 0, 100 ) );
+      }
+    });
 
 // Date Picker
 $( function() {
