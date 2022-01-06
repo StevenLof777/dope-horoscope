@@ -49,3 +49,6 @@
     right: 0px;
     
 }
+.ui-datepicker-year{
+    display:none;
+}

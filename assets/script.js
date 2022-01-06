@@ -14,7 +14,10 @@ var moodLi = document.querySelector('#mood')
 
 // Date Picker
 $( function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+        changeYear: false,
+        dateFormat: 'mm-dd',
+    })
   } );
 
 // Zodiac func var's
