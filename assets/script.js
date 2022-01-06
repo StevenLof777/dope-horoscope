@@ -9,7 +9,18 @@ var userDescLI = document.querySelector('#description')
 var luckyNumLI = document.querySelector('#lucky_number')
 var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
-
+var Aries =["Emma Watson", "Paul Rudd"]
+var Taurus =["Kelly Clarkson", "George Klooney"]
+var Gemini =["Venus Williams", "Johnny Depp"]
+var Cancer =["Selena Gomez", "Chris Pratt"]
+var Leo =["Chris Hemsworth", "Jennifer Lawrence"]
+var Virgo =["Beyonce", "Prince Harry"]
+var Libra =["Kim Kardashian", "Lil Wayne"] 
+var Scorpio =["Leonardo DiCaprio", "Katy Perry"]
+var Sagittarius =["Britney Spears", "Brad Pitt"]
+var Capricorn =["Lin-Manuel Miranda", "Kate Middleton"]
+var Aquarius =["Shakira", "Harry Styles"]
+var Pisces =["Justin Bieber", "Olivia Rodrigo"]
 
 // var month = localStorage.getItem
 function zodiac(day, month){
@@ -20,6 +31,7 @@ function zodiac(day, month){
    }
    
    var z_sign = zodiac(01, 09); // 15 - October
+   document.write(z_sign);
    
 //    userDetails.write(z_sign); // Libra
 //    userDetails.innerText = z_sign
@@ -37,7 +49,7 @@ function zodiac(day, month){
     var horoscopeData = response.json()
     .then(function (horoscopeData){
         console.log(horoscopeData)
-        console.log(horoscopeData)
+        // console.log(horoscopeData)
         console.log("color: " + horoscopeData.color)
         console.log("compatibility: is " + horoscopeData.compatibility)
         console.log("Description: " + horoscopeData.description)
