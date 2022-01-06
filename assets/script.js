@@ -34,6 +34,7 @@ var Pisces =["Justin Bieber", "Olivia Rodrigo"]
 function zodiac(day, month){
     // returns the zodiac sign according to day and month (https://coursesweb.net/javascript/zodiac-signs_cs)
     return (day > last_day[month]) ? zodiacArr[month*1 + 1] : zodiacArr[month];
+    
 }
 
 var z_sign = 'virgo';
