@@ -30,13 +30,15 @@
     max-height: 400px;
 }
 
-.main-box {
-    background-color: blue;
+
+.navbar {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--purple2);
+
 }
 
 .nav-link {
-    color: red;
-    float: right;
+    position: relative;
+    right: 0px;
     
 }
-
