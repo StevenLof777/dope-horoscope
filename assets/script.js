@@ -12,6 +12,11 @@ var luckyNumLI = document.querySelector('#lucky_number')
 var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
 
+// Date Picker
+$( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
 // Zodiac func var's
 var zodiacArr =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
 var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
@@ -91,8 +96,5 @@ function callCeleb () {
 }
 callCeleb()
 
-// Date Picker
-$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
+
 
