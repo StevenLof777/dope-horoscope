@@ -40,12 +40,21 @@
 
 .navbar {
     font-family: 'Playfair Display', serif;
-    background-color: var(--purple2);
+    background-color: var(--purple3);
+
+}
+
+.navbar-brand {
+    font-size: 40px;
+    color: var(--blue2);
 
 }
 
 .nav-link {
-    position: relative;
-    right: 0px;
+    font-size: 30px;
+    color: var(--blue);
     
-}
+} 
+
+
+  
