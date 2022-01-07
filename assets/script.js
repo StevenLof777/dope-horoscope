@@ -25,6 +25,14 @@ var celebLucky_time = document.querySelector('#month1')
 var celebMood = document.querySelector('#month1')
 var celebDescription = document.querySelector('#month1')
 
+// Date Picker
+$( function() {
+    $( "#datepicker" ).datepicker({
+        changeYear: false,
+        dateFormat: 'mm-dd',
+    })
+  } );
+
 // Zodiac func var's
 var zodiacArr =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
 var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
@@ -71,8 +79,6 @@ submit.addEventListener('click', function(){
 function celebDetails(z_sign){
     
 }
-
-// var z_sign = zodiac(day, month)
 
 function dateToSign (z_sign) {
     fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${z_sign}&day=today`, {
@@ -142,22 +148,3 @@ function callCeleb (name) {
         console.log(z_sign)
 });
 }
-// dateToSign()
-
-// Date Picker
-$( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-
-
-//   var jsDate = $('#datepicker').datepicker('getDate');
-//   if (jsDate !== null) { // if any date selected in datepicker
-//       jsDate instanceof Date; // -> true
-//       jsDate.getDate();
-//       jsDate.getMonth();
-//       jsDate.getFullYear();
-//   }
-//   if(this.selected){
-//     console.log(this.selected.endDate.format("DD-MMMM-YY"); // need to show date in DD-MMMM-YY Format
-//   }
-  

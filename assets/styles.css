@@ -54,7 +54,7 @@
     font-size: 30px;
     color: var(--blue);
     
-} 
-
-
-  
+}
+.ui-datepicker-year{
+    display:none;
+}
