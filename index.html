@@ -82,20 +82,29 @@
       <!-- Middle -->
       <div class="col">
         <div class="container">
-          <button>Compare</button>
-          <p>Date: <input type="text" id="datepicker"></p>
+          <button id="submit-date">Submit</button>
+          <p>Date: <input type="text" id="datepicker"></p>          
+          <!-- <button id="compatibility">Compatibility</button> -->
         </div>
       </div>
 
       <!-- Right side -->
       <div class="col">
-        <div id="celebDetails" class="container">Words</div>
+        <div class="container">
+          <ul id="celDetails">
+            <li id="celeb-sign"></li>
+            <li id="celeb-color"></li>
+            <li id="celeb-compatibility"></li>
+            <li id="celeb-lucky_number"></li>
+            <li id="celeb-lucky_time"></li>
+            <li id="celeb-mood"></li>
+            <li id="celeb-description"></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
   
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="./assets/script.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="./assets/script.js"></script>
 </body>
 </html>
