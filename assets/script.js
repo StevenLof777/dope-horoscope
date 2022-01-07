@@ -17,14 +17,17 @@ var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
 
 // Celeb Details  
-var celebSign = document.querySelector('#month1')
-var celebColor = document.querySelector('#month1')
-var celebCompatibility = document.querySelector('#month1')
-var celebLucky_number = document.querySelector('#month1')
-var celebLucky_time = document.querySelector('#month1')
-var celebMood = document.querySelector('#month1')
-var celebDescription = document.querySelector('#month1')
-
+var celebSign = document.querySelector('#celeb-sign')
+var celebColor = document.querySelector('#celeb-color')
+var celebCompatibility = document.querySelector('#celeb-compatibility')
+var celebLucky_number = document.querySelector('#celeb-lucky_number')
+var celebLucky_time = document.querySelector('#celeb-lucky_time')
+var celebMood = document.querySelector('#celeb-mood')
+var celebDescription = document.querySelector('#celeb-description')
+var celebName = document.querySelector('#name')
+var celebAge = document.querySelector('#age')
+var height = document.querySelector('#occupation')
+var celebNetWorth = document.querySelector('#net_worth')
 // Date Picker
 $( function() {
     $( "#datepicker" ).datepicker({
@@ -101,60 +104,68 @@ function dateToSign (z_sign) {
             // Switch statement to check the compatibility
             switch (horoscopeData.compatibility) {
                 case 'Sagittarius':
-                    // If user is compatible 
-                    callCeleb(Taurus[0])
-                // pick celebrity from array
                     var userCelebrity = Sagittarius[Math.floor(Math.random()*Sagittarius.length)]
                     console.log(userCelebrity)
+
+                    callCeleb(userCelebrity)
                     break;
                 case 'Aries':
                     var userCelebrity  = Aries[Math.floor(Math.random()*Aries.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Aquarius':
                     var userCelebrity  = Aquarius[Math.floor(Math.random()*Aquarius.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Taurus':
                     var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;    
                 case 'Capricorn':
                     var userCelebrity  = Capricorn[Math.floor(Math.random()*Capricorn.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Pisces':
                     var userCelebrity  = Pisces[Math.floor(Math.random()*Pisces.length)];
-                    console.log(userCelebrity);
+                    console.log(typeof userCelebrity);
+                    callCeleb(userCelebrity)
                     break;    
                 case 'Gemini':
                     var userCelebrity  = Gemini[Math.floor(Math.random()*Gemini.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Cancer':
                     var userCelebrity  = Cancer[Math.floor(Math.random()*Cancer.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Leo':
                     var userCelebrity  = Leo[Math.floor(Math.random()*Leo.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Virgo':
                     var userCelebrity  = Virgo[Math.floor(Math.random()*Virgo.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Libra':
                     var userCelebrity  = Libra[Math.floor(Math.random()*Libra.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 case 'Scorpio':
                     var userCelebrity  = Scorpio[Math.floor(Math.random()*Scorpio.length)];
                     console.log(userCelebrity);
+                    callCeleb(userCelebrity)
                     break;
                 default:
-
-                
-                    console.log('wrong')
+                    // console.log('wrong')
                     break;   
             }
 
@@ -164,10 +175,30 @@ function dateToSign (z_sign) {
     });
 };
 
-
-dateToSign()
-
-
+function celebFunc (z_sign) {
+    fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${z_sign}&day=today`, {
+    "method": "POST",
+    "headers": {
+        "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
+        "x-rapidapi-key": "e62a7796a3msh0623a8dce54fae1p10c5c9jsn4bfcafdb2b2b"
+        }
+    })
+    .then(response => {
+        return response.json();
+    }).then(function (horoscopeData){
+        console.log(horoscopeData.color)
+        celebColor.innerHTML="Color: " + horoscopeData.color
+        celebCompatibility.innerHTML="Compatibility: " + horoscopeData.compatibility
+        celebLucky_number.innerHTML="Lucky Number: " + horoscopeData.lucky_number
+        celebLucky_time.innerHTML="Lucky Time: " + horoscopeData.lucky_time
+        celebMood.innerHTML="Mood: " + horoscopeData.mood
+        celebDescription.innerHTML="Desciption: " + horoscopeData.description
+    })
+    .catch(err => {
+        console.error(err);
+    });
+};
+celebFunc('aries')
 
 // Call Celeb
 function callCeleb (name) {
@@ -176,33 +207,14 @@ function callCeleb (name) {
         url: 'https://api.api-ninjas.com/v1/celebrity?name=' + name,
         headers: { 'X-Api-Key': 'mM3hOIKpYsVAmBopD3qVFA==mPctNJmaPTOScjRr'},
         contentType: 'application/json',
-        success: function(result) {
-            console.log(result)
-
-        // var celebBDay = result[0].birthdy
-        // var celebBDayArr = celebBDay.slice(5).split('-')
-        // var celebMonth = parseInt(celebBDayArr[0])
-        // var celebDay = parseInt(celebBDayArr[1])
-        // // zodiac(celebDay, celebMonth)
         
-        },
-        error: function ajaxError(jqXHR) {
-            console.error('Error: ', jqXHR.responseText);
-        }
-    
+    }).then((res) => {
+        console.log(res[0].net_worth);
+        celebName.textContent = res[0].name;
+        celebAge.textContent = res[0].age;
+        height.textContent = res[0].height;
+        celebNetWorth.textContent = res[0].net_worth;
     })
-    .done(function(result) {  
-        // console.log('done func works')
-        var celebBDay = result[0].birthdy
-        var celebBDayArr = celebBDay.slice(5).split('-')
-        celebMonth = parseInt(celebBDayArr[0])
-        celebDay = parseInt(celebBDayArr[1])    
-        // console.log(zodiac(celebDay, celebMonth))
-        var celebZSign = zodiac(celebDay, celebMonth)
-        // dateToSign(z_sign)
-        console.log(z_sign)
-    
-    });
 };
 
-callCeleb(name);
+
