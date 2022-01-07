@@ -1,6 +1,10 @@
 // User Details
 var inputEl = document.querySelector('#month1')
 var input = inputEl.value
+var datePicker = document.querySelector('#datepicker')
+
+// Buttons
+var submit = document.querySelector('#submit-date')
 
 // User Details
 var userDetailsUL = document.querySelector('#userDetails')
@@ -25,8 +29,12 @@ var celebDescription = document.querySelector('#month1')
 var zodiacArr =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
 var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
 
+// Empty celeb var's
+var celebMonth       
+var celebDay
+
 // Celebrity Names
-var name = 'Michael Jackson'
+var name = 'Michael Jordan'
 var Aries =["Emma Watson", "Paul Rudd"]
 var Taurus =["Kelly Clarkson", "George Klooney"]
 var Gemini =["Venus Williams", "Johnny Depp"]
@@ -40,14 +48,33 @@ var Capricorn =["Lin-Manuel Miranda", "Kate Middleton"]
 var Aquarius =["Shakira", "Harry Styles"]
 var Pisces =["Justin Bieber", "Olivia Rodrigo"]
 
+// On page load
+if (localStorage.getItem('date')) {
+    datePicker.value = localStorage.getItem('date') 
+}
+
 function zodiac(day, month){
     // returns the zodiac sign according to day and month (https://coursesweb.net/javascript/zodiac-signs_cs)
     return (day > last_day[month]) ? zodiacArr[month*1 + 1] : zodiacArr[month];
 }
 
-var z_sign = 'virgo'
+// Evenlisteners
+submit.addEventListener('click', function(){
+    localStorage.setItem('date', datepicker.value)
+    var userBday = localStorage.getItem('date')
+    var uBdayArr = userBday.split('/')
+    var callZSign = zodiac(parseInt(uBdayArr[1]), parseInt(uBdayArr[0]))
+    // Func that shows celeb details)
+    dateToSign(callZSign)
+})
 
-function callUser () {
+function celebDetails(z_sign){
+    
+}
+
+// var z_sign = zodiac(day, month)
+
+function dateToSign (z_sign) {
     fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${z_sign}&day=today`, {
     "method": "POST",
     "headers": {
@@ -65,53 +92,72 @@ function callUser () {
             luckyNumLI.innerHTML="Lucky Number:  " + horoscopeData.lucky_number
             luckyTimeLI.innerHTML="Lucky Time:  " + horoscopeData.lucky_time
             moodLi.innerHTML="Mood:  " + horoscopeData.mood
+            // Switch statement to check the compatibility
+            switch (horoscopeData.compatibility) {
+                case 'Sagittarius':
+                    // If user is compatible 
+                    callCeleb(Taurus[0])
+                    console.log(Taurus[0])
+                    break
+                default:
+                    console.log('wrong')
+                    break
+
+            }
         })
     })
     .catch(err => {
         console.error(err);
     });
 }
-callUser()
+dateToSign()
 
 // Call Celeb
-function callCeleb () {
+function callCeleb (name) {
     $.ajax({
         method: 'GET',
         url: 'https://api.api-ninjas.com/v1/celebrity?name=' + name,
         headers: { 'X-Api-Key': 'mM3hOIKpYsVAmBopD3qVFA==mPctNJmaPTOScjRr'},
         contentType: 'application/json',
         success: function(result) {
-            var celebBDay = result[0].birthdy
-            var celebBDayArr = celebBDay.slice(5).split('-')
-            var celebMonth = parseInt(celebBDayArr[0])
-            var celebDay = parseInt(celebBDayArr[1])
-            // zodiac(celebDay, celebMonth)
+        // var celebBDay = result[0].birthdy
+        // var celebBDayArr = celebBDay.slice(5).split('-')
+        // var celebMonth = parseInt(celebBDayArr[0])
+        // var celebDay = parseInt(celebBDayArr[1])
+        // // zodiac(celebDay, celebMonth)
+        // console.log('success function works')
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
-    }).done(function( data ) {
-    if ( console && console.log ) {
-        console.log(celebBDay);
-    }
+    }).done(function(result) {
+        // console.log('done func works')
+        var celebBDay = result[0].birthdy
+        var celebBDayArr = celebBDay.slice(5).split('-')
+        celebMonth = parseInt(celebBDayArr[0])
+        celebDay = parseInt(celebBDayArr[1])    
+        // console.log(zodiac(celebDay, celebMonth))
+        var celebZSign = zodiac(celebDay, celebMonth)
+        // dateToSign(z_sign)
+        console.log(z_sign)
 });
 }
-callCeleb()
-
-$.ajax({
-    url: "https://fiddle.jshell.net/favicon.png",
-    beforeSend: function( xhr ) {
-      xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
-    }
-  })
-    .done(function( data ) {
-      if ( console && console.log ) {
-        console.log( "Sample of data:", data.slice( 0, 100 ) );
-      }
-    });
+// dateToSign()
 
 // Date Picker
 $( function() {
     $( "#datepicker" ).datepicker();
   } );
 
+
+//   var jsDate = $('#datepicker').datepicker('getDate');
+//   if (jsDate !== null) { // if any date selected in datepicker
+//       jsDate instanceof Date; // -> true
+//       jsDate.getDate();
+//       jsDate.getMonth();
+//       jsDate.getFullYear();
+//   }
+//   if(this.selected){
+//     console.log(this.selected.endDate.format("DD-MMMM-YY"); // need to show date in DD-MMMM-YY Format
+//   }
+  
