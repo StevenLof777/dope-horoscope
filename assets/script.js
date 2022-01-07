@@ -108,21 +108,27 @@ function dateToSign (z_sign) {
                 default:
                     console.log('wrong')
                     break
+                    
 
             }
         })
     })
+
     .catch(err => {
         console.error(err);
     });
 }
 dateToSign()
 
+// // pick celebrity from array
+// var userCelebrity = Aries[Math.floor(Math.random()*Aries.length)]
+// console.log(userCelebrity)
+
 // Call Celeb
-function callCeleb (name) {
+function callCeleb (userCelebrity) {
     $.ajax({
         method: 'GET',
-        url: 'https://api.api-ninjas.com/v1/celebrity?name=' + name,
+        url: 'https://api.api-ninjas.com/v1/celebrity?name=' + userCelebrity,
         headers: { 'X-Api-Key': 'mM3hOIKpYsVAmBopD3qVFA==mPctNJmaPTOScjRr'},
         contentType: 'application/json',
         success: function(result) {
@@ -131,12 +137,14 @@ function callCeleb (name) {
         // var celebMonth = parseInt(celebBDayArr[0])
         // var celebDay = parseInt(celebBDayArr[1])
         // // zodiac(celebDay, celebMonth)
-        // console.log('success function works')
+        console.log('success function works')
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
         }
-    }).done(function(result) {
+    
+    })
+    .done(function(result) {  
         // console.log('done func works')
         var celebBDay = result[0].birthdy
         var celebBDayArr = celebBDay.slice(5).split('-')
@@ -146,5 +154,6 @@ function callCeleb (name) {
         var celebZSign = zodiac(celebDay, celebMonth)
         // dateToSign(z_sign)
         console.log(z_sign)
-});
-}
+    
+    });}
+
