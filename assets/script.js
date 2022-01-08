@@ -17,13 +17,13 @@ var luckyTimeLI = document.querySelector('#lucky_time')
 var moodLi = document.querySelector('#mood')
 
 // Celeb Details  
-var celebSign = document.querySelector('#month1')
-var celebColor = document.querySelector('#month1')
-var celebCompatibility = document.querySelector('#month1')
-var celebLucky_number = document.querySelector('#month1')
-var celebLucky_time = document.querySelector('#month1')
-var celebMood = document.querySelector('#month1')
-var celebDescription = document.querySelector('#month1')
+var celebSign = document.querySelector('#celeb-sign')
+var celebColor = document.querySelector('#celeb-color')
+var celebCompatibility = document.querySelector('#celeb-compatibility')
+var celebLucky_number = document.querySelector('#celeb-lucky_number')
+var celebLucky_time = document.querySelector('#celeb-lucky_time')
+var celebMood = document.querySelector('#celeb-mood')
+var celebDescription = document.querySelector('#celeb-description')
 
 // Date Picker
 $( function() {
@@ -87,14 +87,14 @@ function dateToSign (z_sign) {
         "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
         "x-rapidapi-key": "e62a7796a3msh0623a8dce54fae1p10c5c9jsn4bfcafdb2b2b"
         }
-    })
+    }
     .then(response => {
         return response.json();
     }).then(function (horoscopeData){
             userSign.innerHTML='Sign: ' + z_sign
             userColorLI.innerHTML="Color:  " + horoscopeData.color
             userCompLI.innerHTML="Compatibility:  " + horoscopeData.compatibility
-            userDescLI.innerHTML="Description:  " + horoscopeData.description
+            userDescLI.innerHTML="Horoscope:  " + horoscopeData.description
             luckyNumLI.innerHTML="Lucky Number:  " + horoscopeData.lucky_number
             luckyTimeLI.innerHTML="Lucky Time:  " + horoscopeData.lucky_time
             moodLi.innerHTML="Mood:  " + horoscopeData.mood
@@ -161,7 +161,7 @@ function dateToSign (z_sign) {
     })
     .catch(err => {
         console.error(err);
-    });
+    }));
 };
 
 
@@ -185,10 +185,20 @@ function callCeleb (name) {
         // var celebDay = parseInt(celebBDayArr[1])
         // // zodiac(celebDay, celebMonth)
         
+        celebSign.innerHTML="Sign: " + horoscopeData.userSign
+        celebColor.innerHTML="Color: " + horoscopeData.color
+        celebCompatibility.innerHTML="Compatibility: " + hor
+        celebLucky_number.innerHTML="Lucky Number: " + horoscopeData.lucky_number
+        celebLucky_time.innerHTML="Lucky Time: " + horoscopeData.lucky_time
+        celebMood.innerHTML="Mood: " + horoscopeData.mood
+        celebDescription.innerHTML="Desciption: " + horoscopeData.description
+
+
+
         },
         error: function ajaxError(jqXHR) {
             console.error('Error: ', jqXHR.responseText);
-        }
+    
     
     })
     .done(function(result) {  
