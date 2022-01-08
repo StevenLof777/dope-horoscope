@@ -87,7 +87,7 @@ function dateToSign (z_sign) {
         "x-rapidapi-host": "sameer-kumar-aztro-v1.p.rapidapi.com",
         "x-rapidapi-key": "e62a7796a3msh0623a8dce54fae1p10c5c9jsn4bfcafdb2b2b"
         }
-    }
+    })
     .then(response => {
         return response.json();
     }).then(function (horoscopeData){
@@ -161,7 +161,7 @@ function dateToSign (z_sign) {
     })
     .catch(err => {
         console.error(err);
-    }));
+    });
 };
 
 
@@ -185,13 +185,13 @@ function callCeleb (name) {
         // var celebDay = parseInt(celebBDayArr[1])
         // // zodiac(celebDay, celebMonth)
         
-        celebSign.innerHTML="Sign: " + horoscopeData.userSign
-        celebColor.innerHTML="Color: " + horoscopeData.color
-        celebCompatibility.innerHTML="Compatibility: " + hor
-        celebLucky_number.innerHTML="Lucky Number: " + horoscopeData.lucky_number
-        celebLucky_time.innerHTML="Lucky Time: " + horoscopeData.lucky_time
-        celebMood.innerHTML="Mood: " + horoscopeData.mood
-        celebDescription.innerHTML="Desciption: " + horoscopeData.description
+        // celebSign.innerHTML="Sign: " + horoscopeData.userSign
+        // celebColor.innerHTML="Color: " + horoscopeData.color
+        // celebCompatibility.innerHTML="Compatibility: " + hor
+        // celebLucky_number.innerHTML="Lucky Number: " + horoscopeData.lucky_number
+        // celebLucky_time.innerHTML="Lucky Time: " + horoscopeData.lucky_time
+        // celebMood.innerHTML="Mood: " + horoscopeData.mood
+        // celebDescription.innerHTML="Desciption: " + horoscopeData.description
 
 
 
@@ -201,18 +201,7 @@ function callCeleb (name) {
     
     
     })
-    .done(function(result) {  
-        // console.log('done func works')
-        var celebBDay = result[0].birthdy
-        var celebBDayArr = celebBDay.slice(5).split('-')
-        celebMonth = parseInt(celebBDayArr[0])
-        celebDay = parseInt(celebBDayArr[1])    
-        // console.log(zodiac(celebDay, celebMonth))
-        var celebZSign = zodiac(celebDay, celebMonth)
-        // dateToSign(z_sign)
-        console.log(z_sign)
     
-    });
 };
 
 callCeleb(name);
