@@ -33,6 +33,7 @@ $( function() {
     $( "#datepicker" ).datepicker({
         changeYear: false,
         dateFormat: 'mm-dd',
+        changeMonth: true,
     })
   } );
 
