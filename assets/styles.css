@@ -15,9 +15,9 @@
  #userDetails {
     background-color: var(--pink2);
     font-family: 'Playfair Display', serif;
-    margin-top: 20px;
-    width: 450px; 
-    padding: 60px;
+    /* margin-top: 20px;
+    width: 450px;  */
+    /* padding: 60px; */
 /*     max-width: 400px;
     max-height: 400px; */
 }
@@ -26,26 +26,26 @@
 
 #celebDetails {
     background-color: brown;
-    max-width: 400px;
-    max-height: 400px;
+    /* max-width: 400px;
+    max-height: 400px; */
 }
 
 
 .box {
     background-color: blueviolet;
-    max-width: 400px;
-    max-height: 400px;
+    /* max-width: 400px;
+    max-height: 400px; */
 }
 
 
 .middleCol {
     background-color: lightblue;
-    width: 200px;
+    /* width: 200px; */
 }
 
 .rightCol {
     background-color: lightcyan;
-    width: 200px;
+    /* width: 200px; */
 }
 
 /* .col {
@@ -53,7 +53,6 @@
     margin-left: 30%; */
 /* } */
 /* .main-box {} */
-
 
 .navbar {
     font-family: 'Playfair Display', serif;
@@ -85,7 +84,7 @@ body {
     margin-top: 20px;
 }
 
-.col {
+.details {
     background-color: var(--pink2);
 }
 
@@ -93,3 +92,13 @@ body {
     display:none;
 }
 
+#submit-date {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    background-color: var(--purple1);
+}
+
+#submit-date:hover {
+    background-color: var(--purple2);
+}

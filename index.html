@@ -64,8 +64,9 @@
   <!-- Display astrological details -->
   <div class="container">
     <div class="row">
+      
       <!-- Left side -->
-      <div class="col">
+      <div class="col details">
         <div class="container">
           <ul id="userDetails">
             <li id="sign"></li>
@@ -80,18 +81,18 @@
       </div>
 
       <!-- Middle -->
-      <div class="middleCol">
+      <div class="col">
         <div class="container">
           <p>Date: <input type="text" id="datepicker"></p>          
           <!-- <button id="compatibility">Compatibility</button> -->
+          <button type="submit" value="Submit" class="btn btn-info" id="submit-date">
+            Submit
+          </button>
         </div>
-        <button type="submit" value="Submit" class="btn btn-info" id="submit-date">
-          Submit
-        </button>
       </div>
 
       <!-- Right side -->
-      <div class="rightCol">
+      <div class="col details">
         <div class="container">
           <ul id="celDetails">
             <!-- zodiac details -->            
@@ -104,7 +105,6 @@
             <li id="celeb-mood"></li>
             <li id="celeb-description"></li>
             <!-- life details -->
-
             <li id="age"></li>
             <li id="height"></li> 
             <li id="occupation"></li>
