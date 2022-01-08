@@ -62,6 +62,9 @@ header {
     /* width: 200px; */
 }
 
+.colDetails{
+    font-family: 'Playfair Display', serif;    
+}
 /* .col {
     justify-content: center;
     margin-left: 30%; */
@@ -96,6 +99,7 @@ body {
 
 .container {
     margin-top: 20px;
+    font-family: 'Playfair Display', serif;
 }
 
 .details {
