@@ -12,12 +12,12 @@
  }
 
  
- #userDetails {
+#userDetails {
     background-color: var(--pink2);
     font-family: 'Playfair Display', serif;
-    margin-top: 20px;
+    /* margin-top: 20px;
     width: 450px; 
-    padding: 60px;
+    padding: 60px; */
 /*     max-width: 400px;
     max-height: 400px; */
 }
@@ -26,26 +26,26 @@
 
 #celebDetails {
     background-color: brown;
-    max-width: 400px;
-    max-height: 400px;
+    /* max-width: 400px;
+    max-height: 400px; */
 }
 
 
 .box {
     background-color: blueviolet;
-    max-width: 400px;
-    max-height: 400px;
+    /* max-width: 400px;
+    max-height: 400px; */
 }
 
 
 .middleCol {
     background-color: lightblue;
-    width: 200px;
+    /* width: 200px; */
 }
 
 .rightCol {
     background-color: lightcyan;
-    width: 200px;
+    /* width: 200px; */
 }
 
 /* .col {
@@ -82,7 +82,7 @@ body {
 } */
 
 .container {
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .col {
@@ -90,6 +90,6 @@ body {
 }
 
 .ui-datepicker-year {
-    display:none;
+    /* display:none; */
 }
 
