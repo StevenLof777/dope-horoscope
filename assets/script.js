@@ -138,7 +138,7 @@ function dateToSign (z_sign) {
                 case 'Gemini':
                     var userCelebrity  = Gemini[Math.floor(Math.random()*Gemini.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Gemini')
                     callCeleb(userCelebrity)
                     break;
                 case 'Cancer':
@@ -162,13 +162,13 @@ function dateToSign (z_sign) {
                 case 'Libra':
                     var userCelebrity  = Libra[Math.floor(Math.random()*Libra.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('libra')
                     callCeleb(userCelebrity)
                     break;
                 case 'Scorpio':
                     var userCelebrity  = Scorpio[Math.floor(Math.random()*Scorpio.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Scorpio')
                     callCeleb(userCelebrity)
                     break;
                 default:
@@ -194,7 +194,7 @@ function celebFunc (z_sign) {
         return response.json();
     }).then(function (horoscopeData){
         console.log(horoscopeData)
-        celebSign.innerHTML = z_sign
+        celebSign.innerHTML = 'Sign: ' + z_sign
         celebColor.innerHTML="Color: " + horoscopeData.color
         // Compatibility doesn't match
         // celebCompatibility.innerHTML="Compatibility: " + horoscopeData.compatibility
@@ -218,7 +218,7 @@ function callCeleb (name) {
         
     }).then((res) => {
         // console.log(res[0]);
-        celebName.textContent = res[0].name;
+        celebName.textContent = 'Who you are compatible with: ' + res[0].name;
         celebAge.textContent = res[0].age;
         height.textContent = res[0].height;
         celebNetWorth.textContent = res[0].net_worth;
