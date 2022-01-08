@@ -97,7 +97,7 @@ function dateToSign (z_sign) {
             userSign.innerHTML='Sign: ' + z_sign
             userColorLI.innerHTML="Color:  " + horoscopeData.color
             userCompLI.innerHTML="Compatibility:  " + horoscopeData.compatibility
-            userDescLI.innerHTML="Description:  " + horoscopeData.description
+            userDescLI.innerHTML="Horoscope:  " + horoscopeData.description
             luckyNumLI.innerHTML="Lucky Number:  " + horoscopeData.lucky_number
             luckyTimeLI.innerHTML="Lucky Time:  " + horoscopeData.lucky_time
             moodLi.innerHTML="Mood:  " + horoscopeData.mood
