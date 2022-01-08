@@ -22,7 +22,21 @@
     max-height: 400px; */
 }
 
+header {
+    margin-top: 2rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: xx-large;
+    border-bottom: var(--purple1);
+    font-weight: 600;
+    font-style: oblique 20deg;
+    margin-bottom: 1rem;
+    /* border-bottom: dotted var(--purple1); */
+}
 
+.dope {
+    border-bottom: dotted var(--purple1);
+}
 
 #celebDetails {
     background-color: brown;
