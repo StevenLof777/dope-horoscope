@@ -44,7 +44,7 @@
       </nav>
       
         <div class="container dope">
-          <header>Dope Horoscope</header>
+          <header>DOPE HOROSCOPE</header>
         </div>
 
     <div class="container main-box">
@@ -86,8 +86,12 @@
       <!-- Middle -->
       <div class="col">
         <div class="container">
-          <p>Date: <input type="text" id="datepicker"></p>          
-          <!-- <button id="compatibility">Compatibility</button> -->
+          <ul>
+            <li class="userResult">You are compatible with:</li>
+            <li id="name"></li>
+            </ul>
+          <img src="" alt="celebrity that user is compatible with">
+          <p class="date">BIRTHDAY: <input type="text" id="datepicker"></p>          
           <button type="submit" value="Submit" class="btn btn-info" id="submit-date">
             Submit
           </button>
@@ -99,18 +103,16 @@
         <div class="container">
           <ul id="celDetails">
             <!-- zodiac details -->            
-            <li id="name"></li>
             <li id="celeb-sign"></li>
             <li id="celeb-color"></li>
-            <li id="celeb-compatibility"></li>
             <li id="celeb-lucky_number"></li>
             <li id="celeb-lucky_time"></li>
             <li id="celeb-mood"></li>
-            <li id="celeb-description"></li>
             <!-- life details -->
             <li id="age"></li>
-            <li id="height"></li> 
-            <li id="occupation"></li>
+            <li id="height"></li>
+             <!--Might get rid of later-->
+            <!-- <li id="occupation"></li> -->
             <li id="net_worth"></li>
           </ul>
         </div>

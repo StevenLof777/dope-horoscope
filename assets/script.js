@@ -26,8 +26,9 @@ var celebMood = document.querySelector('#celeb-mood')
 var celebDescription = document.querySelector('#celeb-description')
 var celebName = document.querySelector('#name')
 var celebAge = document.querySelector('#age')
-var height = document.querySelector('#occupation')
+var height = document.querySelector('#height')
 var celebNetWorth = document.querySelector('#net_worth')
+var occupation = document.querySelector('#occupation')
 // Date Picker
 $( function() {
     $( "#datepicker" ).datepicker({
@@ -127,7 +128,7 @@ function dateToSign (z_sign) {
                 case 'Capricorn':
                     var userCelebrity  = Capricorn[Math.floor(Math.random()*Capricorn.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Capricorn')
                     callCeleb(userCelebrity)
                     break;
                 case 'Pisces':
@@ -145,13 +146,13 @@ function dateToSign (z_sign) {
                 case 'Cancer':
                     var userCelebrity  = Cancer[Math.floor(Math.random()*Cancer.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Cancer')
                     callCeleb(userCelebrity)
                     break;
                 case 'Leo':
                     var userCelebrity  = Leo[Math.floor(Math.random()*Leo.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Leo')
                     callCeleb(userCelebrity)
                     break;
                 case 'Virgo':
@@ -194,18 +195,15 @@ function celebFunc (z_sign) {
     .then(response => {
         return response.json();
     }).then(function (horoscopeData){
-        console.log(horoscopeData)
         celebSign.innerHTML = 'Sign: ' + z_sign
         celebColor.innerHTML="Color: " + horoscopeData.color
-        // Compatibility doesn't match
-        // celebCompatibility.innerHTML="Compatibility: " + horoscopeData.compatibility
         celebLucky_number.innerHTML="Lucky Number: " + horoscopeData.lucky_number
         celebLucky_time.innerHTML="Lucky Time: " + horoscopeData.lucky_time
         celebMood.innerHTML="Mood: " + horoscopeData.mood
         celebDescription.innerHTML="Desciption: " + horoscopeData.description
     })
     .catch(err => {
-        console.error(err);
+        // console.error(err);
     });
 };
 
@@ -218,11 +216,17 @@ function callCeleb (name) {
         contentType: 'application/json',
         
     }).then((res) => {
-        // console.log(res[0]);
-        celebName.textContent = 'Who you are compatible with: ' + res[0].name;
-        celebAge.textContent = res[0].age;
-        height.textContent = res[0].height;
-        celebNetWorth.textContent = res[0].net_worth;
+        celebName.textContent = res[0].name.toUpperCase();
+        celebAge.textContent = 'Age: ' + res[0].age;
+        console.log(res[0].height + ' height in meters')
+        function convertHeight () {
+            var heightInInches = Math.floor(res[0].height* 39.37);
+            var feet = Math.floor(heightInInches / 12);
+            var inches = (heightInInches % 12)
+            return 'Height: ' + feet + "'" + inches +'"' 
+        }
+        height.textContent = convertHeight();
+        celebNetWorth.textContent ='Networth: $' + res[0].net_worth;
     })
 };
 
