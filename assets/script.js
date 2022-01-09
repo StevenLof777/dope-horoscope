@@ -29,6 +29,11 @@ var celebAge = document.querySelector('#age')
 var height = document.querySelector('#height')
 var celebNetWorth = document.querySelector('#net_worth')
 var occupation = document.querySelector('#occupation')
+
+// Sign pictures
+var userSymbol = document.querySelector('.userSymbol')
+var celebSymbol = document.querySelector('.celebSymbol')
+
 // Date Picker
 $( function() {
     $( "#datepicker" ).datepicker({
@@ -92,6 +97,8 @@ function dateToSign (z_sign) {
     .then(response => {
         return response.json();
     }).then(function (horoscopeData){
+            // User details
+            userSymbol.src = "./images/Aries.jpg"
             userSign.innerHTML='Sign: ' + z_sign
             userColorLI.innerHTML="Color:  " + horoscopeData.color
             userCompLI.innerHTML="Compatibility:  " + horoscopeData.compatibility
