@@ -111,8 +111,7 @@ function dateToSign (z_sign) {
                 case 'Sagittarius':
                     var userCelebrity = Sagittarius[Math.floor(Math.random()*Sagittarius.length)]
                     console.log(userCelebrity)
-                    celebFunc('aries')
-                    celebSymbol.src = `./images/Aries.jpg`
+                    celebFunc('Sagittarius')
                     callCeleb(userCelebrity)
                     break;
                 case 'Aries':
