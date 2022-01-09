@@ -111,13 +111,13 @@ function dateToSign (z_sign) {
                 case 'Sagittarius':
                     var userCelebrity = Sagittarius[Math.floor(Math.random()*Sagittarius.length)]
                     console.log(userCelebrity)
-                    celebFunc('aries')
+                    celebFunc('Sagittarius')
                     callCeleb(userCelebrity)
                     break;
                 case 'Aries':
                     var userCelebrity  = Aries[Math.floor(Math.random()*Aries.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Aries')
                     callCeleb(userCelebrity)
                     break;
                 case 'Aquarius':
@@ -129,7 +129,7 @@ function dateToSign (z_sign) {
                 case 'Taurus':
                     var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Taurus')
                     callCeleb(userCelebrity)
                     break;    
                 case 'Capricorn':
@@ -141,7 +141,7 @@ function dateToSign (z_sign) {
                 case 'Pisces':
                     var userCelebrity  = Pisces[Math.floor(Math.random()*Pisces.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Pisces')
                     callCeleb(userCelebrity)
                     break;    
                 case 'Gemini':
@@ -165,13 +165,13 @@ function dateToSign (z_sign) {
                 case 'Virgo':
                     var userCelebrity  = Virgo[Math.floor(Math.random()*Virgo.length)];
                     console.log(userCelebrity);
-                    celebFunc('aries')
+                    celebFunc('Virgo')
                     callCeleb(userCelebrity)
                     break;
                 case 'Libra':
                     var userCelebrity  = Libra[Math.floor(Math.random()*Libra.length)];
                     console.log(userCelebrity);
-                    celebFunc('libra')
+                    celebFunc('Libra')
                     callCeleb(userCelebrity)
                     break;
                 case 'Scorpio':
