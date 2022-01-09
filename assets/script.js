@@ -34,6 +34,10 @@ var occupation = document.querySelector('#occupation')
 var userSymbol = document.querySelector('.userSymbol')
 var celebSymbol = document.querySelector('.celebSymbol')
 
+$(window).load(function() {
+    $('#loading').hide();
+  });
+
 // Date Picker
 $( function() {
     $( "#datepicker" ).datepicker({
