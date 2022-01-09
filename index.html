@@ -70,10 +70,10 @@
     <div class="row">
       
       <!-- Left side -->
-      <div class="col details">
+      <div class="col details hide">
         <div class="container">
+          <h3 class="zodiac-headers">USER DETAILS</h3>
           <img class='userSymbol' src="" alt="User symbol">
-          <!-- <img class='idk' src="./images/Aries.jpg" alt="User symbol" max-width="500"> -->
           <ul id="userDetails">
             <li id="sign"></li>
             <li id="color"></li>
@@ -81,21 +81,28 @@
             <li id="lucky_number"></li>
             <li id="lucky_time"></li>
             <li id="mood"></li>
-            <li id="description"></li>
           </ul>
         </div>
       </div>
 
       <!-- Middle -->
-      <div class="col">
-        <div class="container">
+      <div class="col" id="mid">
+        <div class="container" id="inthemiddleofthemid">
+          <div class="hide">
+            <h3 class="zodiac-headers" id="horoscope">YOUR HOROSCOPE</h3>
+          </div>
           <!-- <img class='userSymbol' src="" alt="User symbol"> -->
+          <div class="hide">
           <ul>
+            <li id="description"></li>
             <li class="userResult">You are compatible with:</li>
             <li id="name"></li>
             </ul>
-          <img class="celeb-pic" src="" alt="celebrity that user is compatible with">
-          <p class="date">BIRTHDAY: <input type="text" id="datepicker"></p>          
+          </div>
+          <div class="hide">
+            <img class="celeb-pic" src="" alt="celebrity that user is compatible with">
+          </div>
+            <p class="date">BIRTHDAY: <input type="text" id="datepicker"></p>          
           <button type="submit" value="Submit" class="btn btn-info" id="submit-date">
             Submit
           </button>
@@ -103,9 +110,10 @@
       </div>
 
       <!-- Right side -->
-      <div class="col details">
+      <div class="col details hide">
         <div class="container">
-          <img class='celebSymbol' src="#" alt="Celeb symbol" max-width="500">
+          <h3 class="zodiac-headers">CELEB DETAILS</h3>
+          <img class='celebSymbol' src="#" alt="Celeb symbol">
           <ul id="celDetails">
             <!-- zodiac details -->            
             <li id="celeb-sign"></li>
@@ -123,8 +131,10 @@
         </div>
       </div>
       
+    </div>
+  </div>
 
-      <footer></footer>
+  <footer></footer>
 
       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
