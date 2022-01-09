@@ -115,6 +115,10 @@ header {
 
 }
 
+.navbar-toggler {
+    color: green;
+}
+
 body {
     background-color: var(--pink);
 }
@@ -208,4 +212,10 @@ img {
 
 footer {
     padding: 5rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .row {
+        flex-direction: column;
+    }
 }
