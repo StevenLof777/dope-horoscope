@@ -98,7 +98,7 @@ function dateToSign (z_sign) {
         return response.json();
     }).then(function (horoscopeData){
             // User details
-            userSymbol.src = "./images/Aries.jpg"
+            userSymbol.src = `./images/${z_sign}.jpg`
             userSign.innerHTML='Sign: ' + z_sign
             userColorLI.innerHTML="Color:  " + horoscopeData.color
             userCompLI.innerHTML="Compatibility:  " + horoscopeData.compatibility
