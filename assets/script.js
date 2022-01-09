@@ -50,12 +50,7 @@ var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
 // Empty celeb var's
 var celebMonth;      
 var celebDay;
-
 var celebPic = document.querySelector('.celeb-pic')
-
-
-celebPic.src = './assets/celeb/Beyonce.jpg'
-
 
 // Celebrity Names
 var name = 'Michael Jordan'
@@ -84,6 +79,7 @@ function zodiac(day, month){
 
 // Evenlisteners
 submit.addEventListener('click', function(){
+    $( "div" ).removeClass( "hide" );
     localStorage.setItem('date', datepicker.value)
     var userBday = localStorage.getItem('date')
     var uBdayArr = userBday.split('/')
@@ -117,6 +113,7 @@ function dateToSign (z_sign) {
                 case 'Sagittarius':
                     var userCelebrity = Sagittarius[Math.floor(Math.random()*Sagittarius.length)]
                     console.log(userCelebrity)
+                    celebSymbol.src = './images/Sagittarius.jpg'
                     celebFunc('Sagittarius')
                     callCeleb(userCelebrity)
                     if (userCelebrity == 'Brad Pitt') {
@@ -127,30 +124,35 @@ function dateToSign (z_sign) {
                     break;
                 case 'Aries':
                     var userCelebrity  = Aries[Math.floor(Math.random()*Aries.length)];
+                    celebSymbol.src = './images/Aries.jpg'
                     console.log(userCelebrity);
                     celebFunc('Aries')
                     callCeleb(userCelebrity)
                     break;
                 case 'Aquarius':
                     var userCelebrity  = Aquarius[Math.floor(Math.random()*Aquarius.length)];
+                    celebSymbol.src = './images/Aquarius.jpg'
                     console.log(userCelebrity);
                     celebFunc('Aquarius')
                     callCeleb(userCelebrity)
                     break;
                 case 'Taurus':
                     var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
+                    celebSymbol.src = './images/Taurus.jpg'
                     console.log(userCelebrity);
                     celebFunc('Taurus')
                     callCeleb(userCelebrity)
                     break;    
                 case 'Capricorn':
                     var userCelebrity  = Capricorn[Math.floor(Math.random()*Capricorn.length)];
+                    celebSymbol.src = './images/Capricorn.jpg'
                     console.log(userCelebrity);
                     celebFunc('Capricorn')
                     callCeleb(userCelebrity)
                     break;
                 case 'Pisces':
                     var userCelebrity  = Pisces[Math.floor(Math.random()*Pisces.length)];
+                    celebSymbol.src = './images/Pisces.jpg'
                     console.log(userCelebrity);
                     celebFunc('Pisces')
                     callCeleb(userCelebrity)
@@ -162,35 +164,40 @@ function dateToSign (z_sign) {
                     break;    
                 case 'Gemini':
                     var userCelebrity  = Gemini[Math.floor(Math.random()*Gemini.length)];
+                    celebSymbol.src = './images/Gemini.jpg'
                     console.log(userCelebrity);
+                    celebSymbol.src = './images/Gemini.jpg'
                     celebFunc('Gemini')
                     callCeleb(userCelebrity)
-                    if (userCelebrity == 'Olivia Rodrigo') {
-                        celebPic.src = './assets/celeb/Olivia-Rodrigo.jpg'
+                    if (userCelebrity == 'Venus Williams') {
+                        celebPic.src = './assets/celeb/Venus-Williams.jpg'
                     } else {
-                        celebPic.src = './assets/celeb/Justin-Bieber.jpg'  
+                        celebPic.src = './assets/celeb/Johnny-Depp.jpg'  
                     }
                     break;
                 case 'Cancer':
                     var userCelebrity  = Cancer[Math.floor(Math.random()*Cancer.length)];
+                    celebSymbol.src = './images/Cancer.jpg'
                     console.log(userCelebrity);
                     celebSymbol.src = './images/Cancer.jpg'
                     celebFunc('Cancer')
                     callCeleb(userCelebrity)
                     if (userCelebrity == 'Selena Gomez') {
-                        celebPic.src = './assets/celeb/Kate-Middleton.png'
+                        celebPic.src = './assets/celeb/Selena-Gomez.jpg'
                     } else {
                         celebPic.src = './assets/celeb/Chris-Pratt.jpg'  
                     }
                     break;
                 case 'Leo':
                     var userCelebrity  = Leo[Math.floor(Math.random()*Leo.length)];
+                    celebSymbol.src = './images/Leo.jpg'
                     console.log(userCelebrity);
                     celebFunc('Leo')
                     callCeleb(userCelebrity)
                     break;
                 case 'Virgo':
                     var userCelebrity  = Virgo[Math.floor(Math.random()*Virgo.length)];
+                    celebSymbol.src = './images/Virgo.jpg'
                     console.log(userCelebrity);
                     celebFunc('Virgo')
                     callCeleb(userCelebrity)
@@ -198,6 +205,7 @@ function dateToSign (z_sign) {
                 case 'Libra':
                     var userCelebrity  = Libra[Math.floor(Math.random()*Libra.length)];
                     console.log(userCelebrity);
+                    celebSymbol.src = './images/Libra.jpg'
                     celebFunc('Libra')
                     callCeleb(userCelebrity)
                     if (userCelebrity == 'Lil Wayne') {
@@ -244,7 +252,7 @@ function celebFunc (z_sign) {
         celebLucky_number.innerHTML="Lucky Number: " + horoscopeData.lucky_number
         celebLucky_time.innerHTML="Lucky Time: " + horoscopeData.lucky_time
         celebMood.innerHTML="Mood: " + horoscopeData.mood
-        celebDescription.innerHTML="Desciption: " + horoscopeData.description
+        celebDescription.innerHTML=+ horoscopeData.description
     })
     .catch(err => {
         // console.error(err);
