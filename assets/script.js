@@ -50,12 +50,7 @@ var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
 // Empty celeb var's
 var celebMonth;      
 var celebDay;
-
 var celebPic = document.querySelector('.celeb-pic')
-
-
-celebPic.src = './assets/celeb/Beyonce.jpg'
-
 
 // Celebrity Names
 var name = 'Michael Jordan'
@@ -178,7 +173,7 @@ function dateToSign (z_sign) {
                     celebFunc('Cancer')
                     callCeleb(userCelebrity)
                     if (userCelebrity == 'Selena Gomez') {
-                        celebPic.src = './assets/celeb/Kate-Middleton.png'
+                        celebPic.src = './assets/celeb/Selena-Gomez.jpg'
                     } else {
                         celebPic.src = './assets/celeb/Chris-Pratt.jpg'  
                     }
@@ -198,6 +193,7 @@ function dateToSign (z_sign) {
                 case 'Libra':
                     var userCelebrity  = Libra[Math.floor(Math.random()*Libra.length)];
                     console.log(userCelebrity);
+                    celebSymbol.src = './images/Cancer.jpg'
                     celebFunc('Libra')
                     callCeleb(userCelebrity)
                     if (userCelebrity == 'Lil Wayne') {
