@@ -51,6 +51,12 @@ var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
 var celebMonth;      
 var celebDay;
 
+var celebPic = document.querySelector('.celeb-pic')
+
+
+celebPic.src = './assets/celeb/Beyonce.jpg'
+
+
 // Celebrity Names
 var name = 'Michael Jordan'
 var Aries =["Emma Watson", "Paul Rudd"]
@@ -113,6 +119,11 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity)
                     celebFunc('Sagittarius')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Brad Pitt') {
+                        celebPic.src = './assets/celeb/Brad-Pitt.png'
+                    } else {
+                        celebPic.src = './assets/celeb/Britney-Spears.jpg'  
+                    }
                     break;
                 case 'Aries':
                     var userCelebrity  = Aries[Math.floor(Math.random()*Aries.length)];
@@ -143,18 +154,34 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Pisces')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Olivia Rodrigo') {
+                        celebPic.src = './assets/celeb/Olivia-Rodrigo.jpg'
+                    } else {
+                        celebPic.src = './assets/celeb/Justin-Bieber.jpg'  
+                    }
                     break;    
                 case 'Gemini':
                     var userCelebrity  = Gemini[Math.floor(Math.random()*Gemini.length)];
                     console.log(userCelebrity);
                     celebFunc('Gemini')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Olivia Rodrigo') {
+                        celebPic.src = './assets/celeb/Olivia-Rodrigo.jpg'
+                    } else {
+                        celebPic.src = './assets/celeb/Justin-Bieber.jpg'  
+                    }
                     break;
                 case 'Cancer':
                     var userCelebrity  = Cancer[Math.floor(Math.random()*Cancer.length)];
                     console.log(userCelebrity);
+                    celebSymbol.src = './images/Cancer.jpg'
                     celebFunc('Cancer')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Selena Gomez') {
+                        celebPic.src = './assets/celeb/Kate-Middleton.png'
+                    } else {
+                        celebPic.src = './assets/celeb/Chris-Pratt.jpg'  
+                    }
                     break;
                 case 'Leo':
                     var userCelebrity  = Leo[Math.floor(Math.random()*Leo.length)];
@@ -173,18 +200,28 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Libra')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Lil Wayne') {
+                        celebPic.src = './assets/celeb/Lil-Wayne.jpg'
+                    } else {
+                        celebPic.src = './assets/celeb/Kim-Kardashian.jpg'  
+                    }
                     break;
                 case 'Scorpio':
                     var userCelebrity  = Scorpio[Math.floor(Math.random()*Scorpio.length)];
+                    celebSymbol.src = './images/Scorpio.jpg'
                     console.log(userCelebrity);
                     celebFunc('Scorpio')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Katy Perry') {
+                        celebPic.src = './assets/celeb/Katy-Perry.jpg'
+                    } else {
+                        celebPic.src = './assets/celeb/Leonardo-DiCaprio.jpg'  
+                    }
                     break;
                 default:
                     // console.log('wrong')
                     break;   
             }
-
     })
     .catch(err => {
         console.error(err)
@@ -225,7 +262,7 @@ function callCeleb (name) {
     }).then((res) => {
         celebName.textContent = res[0].name.toUpperCase();
         celebAge.textContent = 'Age: ' + res[0].age;
-        console.log(res[0].height + ' height in meters')
+        // console.log(res[0].height + ' height in meters')
         function convertHeight () {
             var heightInInches = Math.floor(res[0].height* 39.37);
             var feet = Math.floor(heightInInches / 12);
