@@ -26,8 +26,9 @@ var celebMood = document.querySelector('#celeb-mood')
 var celebDescription = document.querySelector('#celeb-description')
 var celebName = document.querySelector('#name')
 var celebAge = document.querySelector('#age')
-var height = document.querySelector('#occupation')
+var height = document.querySelector('#height')
 var celebNetWorth = document.querySelector('#net_worth')
+var occupation = document.querySelector('#occupation')
 // Date Picker
 $( function() {
     $( "#datepicker" ).datepicker({
@@ -80,10 +81,6 @@ submit.addEventListener('click', function(){
     dateToSign(callZSign)
 })
 
-function celebDetails(z_sign){
-    
-}
-
 function dateToSign (z_sign) {
     fetch(`https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=${z_sign}&day=today`, {
     "method": "POST",
@@ -107,62 +104,73 @@ function dateToSign (z_sign) {
                 case 'Sagittarius':
                     var userCelebrity = Sagittarius[Math.floor(Math.random()*Sagittarius.length)]
                     console.log(userCelebrity)
-
+                    celebFunc('aries')
                     callCeleb(userCelebrity)
                     break;
                 case 'Aries':
                     var userCelebrity  = Aries[Math.floor(Math.random()*Aries.length)];
                     console.log(userCelebrity);
+                    celebFunc('aries')
                     callCeleb(userCelebrity)
                     break;
                 case 'Aquarius':
                     var userCelebrity  = Aquarius[Math.floor(Math.random()*Aquarius.length)];
                     console.log(userCelebrity);
+                    celebFunc('Aquarius')
                     callCeleb(userCelebrity)
                     break;
                 case 'Taurus':
                     var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
                     console.log(userCelebrity);
+                    celebFunc('aries')
                     callCeleb(userCelebrity)
                     break;    
                 case 'Capricorn':
                     var userCelebrity  = Capricorn[Math.floor(Math.random()*Capricorn.length)];
                     console.log(userCelebrity);
+                    celebFunc('Capricorn')
                     callCeleb(userCelebrity)
                     break;
                 case 'Pisces':
                     var userCelebrity  = Pisces[Math.floor(Math.random()*Pisces.length)];
-                    console.log(typeof userCelebrity);
+                    console.log(userCelebrity);
+                    celebFunc('aries')
                     callCeleb(userCelebrity)
                     break;    
                 case 'Gemini':
                     var userCelebrity  = Gemini[Math.floor(Math.random()*Gemini.length)];
                     console.log(userCelebrity);
+                    celebFunc('Gemini')
                     callCeleb(userCelebrity)
                     break;
                 case 'Cancer':
                     var userCelebrity  = Cancer[Math.floor(Math.random()*Cancer.length)];
                     console.log(userCelebrity);
+                    celebFunc('Cancer')
                     callCeleb(userCelebrity)
                     break;
                 case 'Leo':
                     var userCelebrity  = Leo[Math.floor(Math.random()*Leo.length)];
                     console.log(userCelebrity);
+                    celebFunc('Leo')
                     callCeleb(userCelebrity)
                     break;
                 case 'Virgo':
                     var userCelebrity  = Virgo[Math.floor(Math.random()*Virgo.length)];
                     console.log(userCelebrity);
+                    celebFunc('aries')
                     callCeleb(userCelebrity)
                     break;
                 case 'Libra':
                     var userCelebrity  = Libra[Math.floor(Math.random()*Libra.length)];
                     console.log(userCelebrity);
+                    celebFunc('libra')
                     callCeleb(userCelebrity)
                     break;
                 case 'Scorpio':
                     var userCelebrity  = Scorpio[Math.floor(Math.random()*Scorpio.length)];
                     console.log(userCelebrity);
+                    celebFunc('Scorpio')
                     callCeleb(userCelebrity)
                     break;
                 default:
@@ -172,7 +180,7 @@ function dateToSign (z_sign) {
 
     })
     .catch(err => {
-        console.error(err);
+        console.error(err)
     });
 };
 
@@ -187,19 +195,17 @@ function celebFunc (z_sign) {
     .then(response => {
         return response.json();
     }).then(function (horoscopeData){
-        console.log(horoscopeData.color)
+        celebSign.innerHTML = 'Sign: ' + z_sign
         celebColor.innerHTML="Color: " + horoscopeData.color
-        celebCompatibility.innerHTML="Compatibility: " + horoscopeData.compatibility
         celebLucky_number.innerHTML="Lucky Number: " + horoscopeData.lucky_number
         celebLucky_time.innerHTML="Lucky Time: " + horoscopeData.lucky_time
         celebMood.innerHTML="Mood: " + horoscopeData.mood
         celebDescription.innerHTML="Desciption: " + horoscopeData.description
     })
     .catch(err => {
-        console.error(err);
+        // console.error(err);
     });
 };
-celebFunc('aries')
 
 // Call Celeb
 function callCeleb (name) {
@@ -210,11 +216,17 @@ function callCeleb (name) {
         contentType: 'application/json',
         
     }).then((res) => {
-        console.log(res[0].net_worth);
-        celebName.textContent = res[0].name;
-        celebAge.textContent = res[0].age;
-        height.textContent = res[0].height;
-        celebNetWorth.textContent = res[0].net_worth;
+        celebName.textContent = res[0].name.toUpperCase();
+        celebAge.textContent = 'Age: ' + res[0].age;
+        console.log(res[0].height + ' height in meters')
+        function convertHeight () {
+            var heightInInches = Math.floor(res[0].height* 39.37);
+            var feet = Math.floor(heightInInches / 12);
+            var inches = (heightInInches % 12)
+            return 'Height: ' + feet + "'" + inches +'"' 
+        }
+        height.textContent = convertHeight();
+        celebNetWorth.textContent ='Networth: $' + res[0].net_worth;
     })
 };
 

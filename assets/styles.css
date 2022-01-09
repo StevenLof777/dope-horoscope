@@ -22,7 +22,27 @@
     max-height: 400px; */
 }
 
+li {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: solid var(--purple3) 2px;
+}
 
+header {
+    margin-top: 2rem;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: xx-large;
+    border-bottom: var(--purple1);
+    font-weight: 600;
+    /* font-style: oblique 20deg; */
+    margin-bottom: 1rem;
+    /* border-bottom: dotted var(--purple1); */
+}
+
+.dope {
+    border-bottom: dotted var(--purple1);
+}
 
 #celebDetails {
     background-color: brown;
@@ -96,6 +116,16 @@ body {
     display:none;
 }
 
+#datepicker {
+    width: 100%;
+}
+
+.date {
+    text-align: center;
+    font-weight: 600;
+    border-bottom: var(--purple1) solid;
+}
+
 #submit-date {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -106,3 +136,16 @@ body {
 #submit-date:hover {
     background-color: var(--purple2);
 }
+
+.userResult {
+    text-align: center;
+    border-bottom: none;
+    font-weight: 600;
+}
+
+#name {
+    font-size: x-large;
+    text-align: center;
+    border-bottom: none;
+}
+
