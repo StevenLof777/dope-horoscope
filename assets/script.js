@@ -56,7 +56,7 @@ var Scorpio =["Leonardo DiCaprio", "Katy Perry"]
 var Sagittarius =["Britney Spears", "Brad Pitt"]
 var Capricorn =["Lin-Manuel Miranda", "Kate Middleton"]
 var Aquarius =["Shakira", "Harry Styles"]
-var Pisces =["Justin Bieber", "Olivia Rodrigo"]
+var Pisces =["Justin Bieber", "John Cena"]
 
 // Spinner
 // https://stackoverflow.com/questions/1853662/how-to-show-page-loading-div-until-the-page-has-finished-loading
@@ -170,8 +170,8 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Pisces')
                     callCeleb(userCelebrity)
-                    if (userCelebrity == 'Olivia Rodrigo') {
-                        celebPic.src = './assets/celeb/Olivia-Rodrigo.jpg'
+                    if (userCelebrity == 'John Cena') {
+                        celebPic.src = './assets/celeb/John-Cena.jpg'
                     } else {
                         celebPic.src = './assets/celeb/Justin-Bieber.jpg'  
                     }
