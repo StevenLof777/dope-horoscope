@@ -142,13 +142,18 @@ function dateToSign (z_sign) {
                     celebFunc('Aquarius')
                     callCeleb(userCelebrity)
                     break;
-                case 'Taurus':
-                    var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
-                    celebSymbol.src = './images/Taurus.jpg'
-                    console.log(userCelebrity);
-                    celebFunc('Taurus')
-                    callCeleb(userCelebrity)
-                    break;    
+                    case 'Scorpio':
+                        var userCelebrity  = Scorpio[Math.floor(Math.random()*Scorpio.length)];
+                        celebSymbol.src = './images/Scorpio.jpg'
+                        console.log(userCelebrity);
+                        celebFunc('Scorpio')
+                        callCeleb(userCelebrity)
+                        if (userCelebrity == 'Katy Perry') {
+                            celebPic.src = './assets/celeb/Katy-Perry.jpg'
+                        } else {
+                            celebPic.src = './assets/celeb/Leonardo-DiCaprio.jpg'  
+                        }
+                    break;  
                 case 'Capricorn':
                     var userCelebrity  = Capricorn[Math.floor(Math.random()*Capricorn.length)];
                     celebSymbol.src = './images/Capricorn.jpg'
@@ -220,16 +225,16 @@ function dateToSign (z_sign) {
                         celebPic.src = './assets/celeb/Kim-Kardashian.jpg'  
                     }
                     break;
-                case 'Scorpio':
-                    var userCelebrity  = Scorpio[Math.floor(Math.random()*Scorpio.length)];
-                    celebSymbol.src = './images/Scorpio.jpg'
+                case 'Taurus':
+                    var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
+                    celebSymbol.src = './images/Taurus.jpg'
                     console.log(userCelebrity);
-                    celebFunc('Scorpio')
+                    celebFunc('Taurus')
                     callCeleb(userCelebrity)
-                    if (userCelebrity == 'Katy Perry') {
-                        celebPic.src = './assets/celeb/Katy-Perry.jpg'
+                    if (userCelebrity == 'George Klooney') {
+                        celebPic.src = './assets/celeb/George-Klooney.jpg'
                     } else {
-                        celebPic.src = './assets/celeb/Leonardo-DiCaprio.jpg'  
+                        celebPic.src = './assets/celeb/Johnny-Depp.jpg'  
                     }
                     break;
                 default:
@@ -274,6 +279,7 @@ function callCeleb (name) {
         contentType: 'application/json',
         
     }).then((res) => {
+        console.log('callCeleb ' + name)
         celebName.textContent = res[0].name.toUpperCase();
         celebAge.textContent = 'Age: ' + res[0].age;
         // console.log(res[0].height + ' height in meters')
@@ -287,5 +293,3 @@ function callCeleb (name) {
         celebNetWorth.textContent ='Networth: $' + res[0].net_worth;
     })
 };
-
-
