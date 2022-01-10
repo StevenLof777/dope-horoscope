@@ -20,7 +20,7 @@ An website that allows an user to input their birth day and recieve their horosc
 
 
 <!-- Add github link later -->
-Github link here
+[Dope Horoscope](https://stevenlof777.github.io/dope-horoscrope/)
 
 
 ## Contributors
