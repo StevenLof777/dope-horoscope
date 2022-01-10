@@ -56,7 +56,7 @@ var Scorpio =["Leonardo DiCaprio", "Katy Perry"]
 var Sagittarius =["Britney Spears", "Brad Pitt"]
 var Capricorn =["Lin-Manuel Miranda", "Kate Middleton"]
 var Aquarius =["Shakira", "Harry Styles"]
-var Pisces =["Justin Bieber", "Olivia Rodrigo"]
+var Pisces =["Justin Bieber", "John Cena"]
 
 // Spinner
 // https://stackoverflow.com/questions/1853662/how-to-show-page-loading-div-until-the-page-has-finished-loading
@@ -170,8 +170,8 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Pisces')
                     callCeleb(userCelebrity)
-                    if (userCelebrity == 'Olivia Rodrigo') {
-                        celebPic.src = './assets/celeb/Olivia-Rodrigo.jpg'
+                    if (userCelebrity == 'John Cena') {
+                        celebPic.src = './assets/celeb/John-Cena.jpg'
                     } else {
                         celebPic.src = './assets/celeb/Justin-Bieber.jpg'  
                     }
@@ -238,16 +238,16 @@ function dateToSign (z_sign) {
                         celebPic.src = './assets/celeb/Kim-Kardashian.jpg'  
                     }
                     break;
-                case 'Scorpio':
-                    var userCelebrity  = Scorpio[Math.floor(Math.random()*Scorpio.length)];
-                    celebSymbol.src = './images/Scorpio.jpg'
+                case 'Taurus':
+                    var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
+                    celebSymbol.src = './images/Taurus.jpg'
                     console.log(userCelebrity);
-                    celebFunc('Scorpio')
+                    celebFunc('Taurus')
                     callCeleb(userCelebrity)
-                    if (userCelebrity == 'Katy Perry') {
-                        celebPic.src = './assets/celeb/Katy-Perry.jpg'
+                    if (userCelebrity == 'George Klooney') {
+                        celebPic.src = './assets/celeb/George-Klooney.jpg'
                     } else {
-                        celebPic.src = './assets/celeb/Leonardo-DiCaprio.jpg'  
+                        celebPic.src = './assets/celeb/Johnny-Depp.jpg'  
                     }
                     break;
                     case 'Taurus':
@@ -304,6 +304,7 @@ function callCeleb (name) {
         contentType: 'application/json',
         
     }).then((res) => {
+        console.log('callCeleb ' + name)
         celebName.textContent = res[0].name.toUpperCase();
         celebAge.textContent = 'Age: ' + res[0].age;
         // console.log(res[0].height + ' height in meters')
@@ -317,5 +318,3 @@ function callCeleb (name) {
         celebNetWorth.textContent ='Networth: $' + res[0].net_worth;
     })
 };
-
-
