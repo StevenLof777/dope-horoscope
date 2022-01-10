@@ -13,9 +13,11 @@ An website that allows an user to input their birth day and recieve their horosc
 
 * The footer will display social media icons that allow user to share horoscope results.
 
-(./images/)
-![Load Page](images/full_page.PNG?raw=true "Load Page")
+# Input Page
 ![Full Page](images/load_page.PNG?raw=true "Full Page")
+# Full Page
+![Load Page](images/full_page.PNG?raw=true "Load Page")
+
 
 <!-- Add github link later -->
 Github link here
