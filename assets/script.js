@@ -134,6 +134,11 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Aries')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Paul Rudd') {
+                        celebPic.src = './assets/celeb/Paul-Rudd.jpg'
+                    } else {
+                        celebPic.src = './assets/celeb/Emma-Watson.jpg'  
+                    }
                     break;
                 case 'Aquarius':
                     var userCelebrity  = Aquarius[Math.floor(Math.random()*Aquarius.length)];
@@ -141,20 +146,23 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Aquarius')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Shakira') {
+                        celebPic.src = './assets/celeb/Shakira.jpg'
+                    } else {
+                        celebPic.src = './assets/celeb/Harry-Styles.jpg'  
+                    }
                     break;
-                case 'Taurus':
-                    var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
-                    celebSymbol.src = './images/Taurus.jpg'
-                    console.log(userCelebrity);
-                    celebFunc('Taurus')
-                    callCeleb(userCelebrity)
-                    break;    
                 case 'Capricorn':
                     var userCelebrity  = Capricorn[Math.floor(Math.random()*Capricorn.length)];
                     celebSymbol.src = './images/Capricorn.jpg'
                     console.log(userCelebrity);
                     celebFunc('Capricorn')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Kate Middleton') {
+                        celebPic.src = './assets/celeb/Kate-Middleton.png'
+                    } else {
+                        celebPic.src = './assets/celeb/Lin-Manuel-Miranda.jpg'  
+                    }
                     break;
                 case 'Pisces':
                     var userCelebrity  = Pisces[Math.floor(Math.random()*Pisces.length)];
@@ -200,6 +208,11 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Leo')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Jennifer Lawrence') {
+                        celebPic.src = './assets/celeb/Jennifer-Lawrence.png'
+                    } else {
+                        celebPic.src = './assets/celeb/Chris-Hemsworth.webp'  
+                    }
                     break;
                 case 'Virgo':
                     var userCelebrity  = Virgo[Math.floor(Math.random()*Virgo.length)];
@@ -207,6 +220,11 @@ function dateToSign (z_sign) {
                     console.log(userCelebrity);
                     celebFunc('Virgo')
                     callCeleb(userCelebrity)
+                    if (userCelebrity == 'Beyonce') {
+                        celebPic.src = './assets/celeb/Beyonce.png'
+                    } else {
+                        celebPic.src = './assets/celeb/Prince-Harry.jpg'  
+                    }
                     break;
                 case 'Libra':
                     var userCelebrity  = Libra[Math.floor(Math.random()*Libra.length)];
@@ -230,6 +248,18 @@ function dateToSign (z_sign) {
                         celebPic.src = './assets/celeb/Katy-Perry.jpg'
                     } else {
                         celebPic.src = './assets/celeb/Leonardo-DiCaprio.jpg'  
+                    }
+                    break;
+                    case 'Taurus':
+                    var userCelebrity  = Taurus[Math.floor(Math.random()*Taurus.length)];
+                    celebSymbol.src = './images/Taurus.jpg'
+                    console.log(userCelebrity);
+                    celebFunc('Taurus')
+                    callCeleb(userCelebrity)
+                    if (userCelebrity == 'Kelly Clarkson') {
+                        celebPic.src = './assets/celeb/kelly-Clarkson.webp'
+                    } else {
+                        celebPic.src = './assets/celeb/George-Clooney.jpg'  
                     }
                     break;
                 default:
