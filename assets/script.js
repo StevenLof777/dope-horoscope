@@ -34,15 +34,6 @@ var occupation = document.querySelector('#occupation')
 var userSymbol = document.querySelector('.userSymbol')
 var celebSymbol = document.querySelector('.celebSymbol')
 
-// Date Picker
-$( function() {
-    $( "#datepicker" ).datepicker({
-        changeYear: false,
-        dateFormat: 'mm-dd',
-        changeMonth: true,
-    })
-  } );
-
 // Zodiac func var's
 var zodiacArr =['', 'Capricorn', 'Aquarius', 'Pisces', 'Aries', 'Taurus', 'Gemini', 'Cancer', 'Leo', 'Virgo', 'Libra', 'Scorpio', 'Sagittarius', 'Capricorn'];
 var last_day =['', 19, 18, 20, 20, 21, 21, 22, 22, 21, 22, 21, 20, 19];
@@ -66,6 +57,21 @@ var Sagittarius =["Britney Spears", "Brad Pitt"]
 var Capricorn =["Lin-Manuel Miranda", "Kate Middleton"]
 var Aquarius =["Shakira", "Harry Styles"]
 var Pisces =["Justin Bieber", "Olivia Rodrigo"]
+
+// Spinner
+// https://stackoverflow.com/questions/1853662/how-to-show-page-loading-div-until-the-page-has-finished-loading
+$(window).load(function() {
+    $('.spinner-border').hide();
+  });
+
+// Date Picker
+$( function() {
+    $( "#datepicker" ).datepicker({
+        changeYear: false,
+        dateFormat: 'mm-dd',
+        changeMonth: true,
+    })
+  } );
 
 // On page load
 if (localStorage.getItem('date')) {
@@ -282,4 +288,67 @@ function callCeleb (name) {
     })
 };
 
+// Social Media Links
+// https://www.jqueryscript.net/social-media/social-share-buttons-c.html
+$('#shareBlock').cShare({
+    data: {
+      fb: {
+        fa: 'fab fa-facebook-f',
+        name: 'Fb',
+        href: (url) => {
+          return `https://www.facebook.com/sharer.php?u=${url}`
+        },
+        show: true
+      },
+      line: {
+        fa: 'fab fa-line fa-2x',
+        name: 'Line',
+        href: (url) => {
+          return `https://social-plugins.line.me/lineit/share?url=${url}`
+        },
+        show: true,
+        hideWrapper: true
+      },
+      plurk: {
+        fa: 'fa-plurk',
+        name: 'Plurk',
+        href: (url, description) => {
+          return `http://www.plurk.com/?qualifier=shares&status=${description} ${url}`
+        },
+        show: false
+      },
+      weibo: {
+        fa: 'fab fa-weibo',
+        name: '微博',
+        href: (url, description) => {
+          return `http://service.weibo.com/share/share.php?title=${description}&url=${url}`
+        },
+        show: false
+      },
+      twitter: {
+        fa: 'fab fa-twitter',
+        name: 'Twitter',
+        href: (url, description) => {
+          return `https://twitter.com/intent/tweet?original_referer=${url}&url=${url}&text=${description}`
+        },
+        show: false
+      },
+      tumblr: {
+        fa: 'fab fa-tumblr',
+        name: 'Tumblr',
+        href: (url, description) => {
+          return `http://www.tumblr.com/share/link?name=${description} ${url}&url=${url}`
+        },
+        show: false
+      },
+      email: {
+        fa: 'fas fa-envelope',
+        name: 'E-mail',
+        href: (url, description) => {
+          return `mailto:?subject=${description}&body=${description} ${url}`
+        },
+        show: false
+      }
+    },
+  });
 
