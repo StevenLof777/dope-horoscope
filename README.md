@@ -20,7 +20,7 @@ An website that allows an user to input their birth day and recieve their horosc
 
 
 <!-- Add github link later -->
-[Dope Horoscope](https://stevenlof777.github.io/dope-horoscrope/)
+[Dope Horoscope](https://stevenlof777.github.io/dope-horoscope/)
 
 
 ## Contributors
@@ -29,3 +29,4 @@ An website that allows an user to input their birth day and recieve their horosc
 * Alisa Wolfram
 * Michael Pennycook
 
+       
